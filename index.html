@@ -71,13 +71,30 @@
             margin: auto;
         }
 
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
         .product {
             background: #fff;
             padding: 20px;
-            margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex: 1 1 calc(33.333% - 20px);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -162,7 +179,7 @@
             }
 
             .product {
-                margin: 10px 0;
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -174,7 +191,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="#categories">Categories</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -189,20 +206,82 @@
             </div>
         </section>
 
-        <section id="products">
+        <section id="categories">
             <div class="container">
-                <h2>Featured Products</h2>
-                <div class="product">
-                    <img src="product1.jpg" alt="Product 1">
-                    <h3>Product 1</h3>
-                    <p>Description of Product 1.</p>
-                    <p class="price">$10.00</p>
+                <div class="category">
+                    <h2>Electronics</h2>
+                    <div class="products">
+                        <div class="product">
+                            <img src="electronics1.jpg" alt="Electronics 1">
+                            <h3>Smartphone</h3>
+                            <p>Latest model with all the features you need.</p>
+                            <p class="price">$299.00</p>
+                        </div>
+                        <div class="product">
+                            <img src="electronics2.jpg" alt="Electronics 2">
+                            <h3>Laptop</h3>
+                            <p>High-performance laptop for work and play.</p>
+                            <p class="price">$899.00</p>
+                        </div>
+                        <!-- Add more electronics products here -->
+                    </div>
                 </div>
-                <div class="product">
-                    <img src="product2.jpg" alt="Product 2">
-                    <h3>Product 2</h3>
-                    <p>Description of Product 2.</p>
-                    <p class="price">$20.00</p>
+
+                <div class="category">
+                    <h2>Fashion</h2>
+                    <div class="products">
+                        <div class="product">
+                            <img src="fashion1.jpg" alt="Fashion 1">
+                            <h3>Summer Dress</h3>
+                            <p>Light and breezy summer dress.</p>
+                            <p class="price">$49.00</p>
+                        </div>
+                        <div class="product">
+                            <img src="fashion2.jpg" alt="Fashion 2">
+                            <h3>Leather Jacket</h3>
+                            <p>Stylish leather jacket for any occasion.</p>
+                            <p class="price">$199.00</p>
+                        </div>
+                        <!-- Add more fashion products here -->
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Home Appliances</h2>
+                    <div class="products">
+                        <div class="product">
+                            <img src="appliance1.jpg" alt="Appliance 1">
+                            <h3>Vacuum Cleaner</h3>
+                            <p>High-efficiency vacuum cleaner.</p>
+                            <p class="price">$129.00</p>
+                        </div>
+                        <div class="product">
+                            <img src="appliance2.jpg" alt="Appliance 2">
+                            <h3>Blender</h3>
+                            <p>Powerful blender for all your kitchen needs.</p>
+                            <p class="price">$79.00</p>
+                        </div>
+                        <!-- Add more home appliances here -->
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h2>Sports Equipment</h2>
+                    <div class="products">
+                        <div class="product">
+                            <img src="sports1.jpg" alt="Sports 1">
+                            <h3>Running Shoes</h3>
+                            <p>Comfortable and durable running shoes.</p>
+                            <p class="price">$89.00</p>
+                        </div>
+                        <div class="product">
+                            <img src="sports2.jpg" alt="Sports 2">
+                            <h3>Yoga Mat</h3>
+                            <p>Non-slip yoga mat for your fitness routines.</p>
+                            <p class="price">$39.00</p>
+                        </div>
+                        <!-- Add more sports equipment here -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -252,15 +331,5 @@
             });
         });
     </script>
-</body>
-</html>
-
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Returns & Refunds</a>
-        </div>
-        <p>&copy; 2024 Flash Sale. All rights reserved.</p>
-    </footer>
 </body>
 </html>
