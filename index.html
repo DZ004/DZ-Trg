@@ -3,81 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DZ Trg - Spletna Stran</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
+    <title>DZ Trg - Spletna Stran za Storitve in Izdelke</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file for styling -->
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem;
+            background: #0056b3; /* Header background color */
+            color: #ffffff;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         header img {
-            max-width: 150px; /* Adjust the logo size */
+            max-width: 150px; /* Logo size */
         }
         nav {
-            background: #444;
-            color: #fff;
-            padding: 1rem;
+            background: #004494; /* Navigation bar color */
+            color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         nav ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
         }
         nav ul li {
-            display: inline-block;
-            position: relative;
-            margin-right: 20px;
+            margin: 0 20px;
         }
         nav ul li a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
-            padding: 10px;
-            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
-        nav ul li:hover > a {
-            background: #555;
+        nav ul li a:hover {
+            background: #003d80; /* Color on hover */
         }
         .dropdown {
             display: none;
             position: absolute;
-            background: #444;
+            background: #004494;
             padding: 10px;
-            z-index: 1000;
+            border-radius: 5px;
         }
         nav ul li:hover .dropdown {
             display: block;
         }
         .login-form {
-            margin-top: 20px;
-        }
-        .login-form input {
-            margin-right: 5px;
+            margin: 10px 0;
         }
         main {
-            padding: 1rem;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
         }
         section {
-            margin-bottom: 2rem;
-            background: #fff;
-            padding: 1rem;
-            border-radius: 5px;
+            margin-bottom: 40px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0056b3; /* Section header color */
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: #fff;
+            padding: 20px;
+            background: #0056b3;
+            color: #ffffff;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 40px;
+        }
+        .call-to-action {
+            background: #28a745; /* Call to action color */
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+        .call-to-action:hover {
+            background: #218838; /* Darker green on hover */
         }
     </style>
     <script>
@@ -96,8 +114,9 @@
 </head>
 <body onload="toggleLanguage('sl')">
     <header>
-        <img src="images/logo.png" alt="DZ Trg Logo"> <!-- Update with the correct logo path -->
-        <h1>Dobrodošli na Mojo Spletno Stran - DZ Trg</h1>
+        <img src="images/logo.png" alt="DZ Trg Logo"> <!-- Update with your logo path -->
+        <h1>DZ Trg</h1>
+        <p>Promocija kakovostnih storitev in izdelkov</p>
         <div>
             <button onclick="toggleLanguage('sl')">Slovenščina</button>
             <button onclick="toggleLanguage('en')">English</button>
@@ -107,6 +126,7 @@
         <ul>
             <li><a href="#about">O Nas</a></li>
             <li><a href="#services">Naše Storitve</a></li>
+            <li><a href="#products">Izdelki</a></li>
             <li><a href="#contact">Kontakt</a></li>
             <li><a href="#trg">Trg</a></li>
             <li><a href="#profile">Ustvari Profil</a></li>
@@ -126,35 +146,60 @@
         <section id="about">
             <h2>O Nas</h2>
             <div id="sl-content">
-                <p>DZ Trg je podjetje, ki se osredotoča na zagotavljanje kakovostnih izdelkov in storitev za naše stranke. Naša vizija je biti vodilni na trgu s stalnim izboljševanjem in inovacijami.</p>
+                <p>DZ Trg je vodilno podjetje v promociji kakovostnih storitev in izdelkov drugih podjetij. Naša misija je povezati potrošnike s ponudniki, ki nudijo vrhunske rešitve.</p>
             </div>
             <div id="en-content" style="display:none;">
-                <p>DZ Trg is a company focused on providing high-quality products and services to our customers. Our vision is to be a market leader through continuous improvement and innovation.</p>
+                <p>DZ Trg is a leading company in promoting high-quality services and products from other businesses. Our mission is to connect consumers with providers offering top-notch solutions.</p>
             </div>
         </section>
         <section id="services">
             <h2>Naše Storitve</h2>
             <div id="sl-content">
-                <p>Naša podjetje ponuja široko paleto storitev, vključno z:</p>
+                <p>Ponujamo široko paleto storitev:</p>
                 <ul>
-                    <li>Kvalitetno prodajo izdelkov</li>
-                    <li>Individualno svetovanje</li>
-                    <li>Hitro dostavo</li>
+                    <li>Kvalitetno promocijo izdelkov</li>
+                    <li>Individualno svetovanje za podjetja</li>
+                    <li>Organizacija dogodkov in delavnic</li>
                 </ul>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Our company offers a wide range of services, including:</p>
+                <p>We offer a wide range of services:</p>
                 <ul>
-                    <li>Quality product sales</li>
-                    <li>Personalized consulting</li>
-                    <li>Fast delivery</li>
+                    <li>Quality product promotion</li>
+                    <li>Individual consulting for businesses</li>
+                    <li>Event and workshop organization</li>
                 </ul>
+            </div>
+        </section>
+        <section id="products">
+            <h2>Izdelki</h2>
+            <div id="sl-content">
+                <p>Odkrijte naše najnovejše produkte in storitve:</p>
+                <ul>
+                    <li><strong>Izdelek 1:</strong> Opis izdelka 1.</li>
+                    <li><strong>Izdelek 2:</strong> Opis izdelka 2.</li>
+                    <li><strong>Izdelek 3:</strong> Opis izdelka 3.</li>
+                </ul>
+                <div class="call-to-action">
+                    <a href="#contact" style="color:white; text-decoration: none;">Kontaktirajte nas za več informacij!</a>
+                </div>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>Discover our latest products and services:</p>
+                <ul>
+                    <li><strong>Product 1:</strong> Description of product 1.</li>
+                    <li><strong>Product 2:</strong> Description of product 2.</li>
+                    <li><strong>Product 3:</strong> Description of product 3.</li>
+                </ul>
+                <div class="call-to-action">
+                    <a href="#contact" style="color:white; text-decoration: none;">Contact us for more information!</a>
+                </div>
             </div>
         </section>
         <section id="contact">
             <h2>Kontakt</h2>
             <div id="sl-content">
-                <p>Za vprašanja ali povpraševanja se obrnite na nas!</p>
+                <p>Za vprašanja ali povpraševanja nas kontaktirajte!</p>
                 <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
             </div>
             <div id="en-content" style="display:none;">
@@ -165,24 +210,38 @@
         <section id="trg">
             <h2>Trg</h2>
             <div id="sl-content">
-                <p>Informacije o trgovanju z našimi izdelki in storitvami. Naša ekipa je vedno na voljo za pomoč.</p>
+                <p>Pridružite se našemu trgu za dostop do ekskluzivnih ponudb in storitev.</p>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Information about trading our products and services. Our team is always available to help.</p>
+                <p>Join our market for                exclusive offers and services.</p>
             </div>
         </section>
         <section id="profile">
             <h2>Ustvari Profil</h2>
             <div id="sl-content">
-                <p>Ustvarite svoj profil tukaj in dostopajte do ekskluzivnih vsebin in ponudb.</p>
+                <p>Ustvarite svoj profil, da dostopate do prilagojenih storitev in promocij.</p>
+                <form action="create_profile.html" method="post">
+                    <input type="text" placeholder="Ime" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Geslo" required>
+                    <input type="submit" value="Ustvari Profil">
+                </form>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Create your profile here and access exclusive content and offers.</p>
+                <p>Create your profile to access personalized services and promotions.</p>
+                <form action="create_profile.html" method="post">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="submit" value="Create Profile">
+                </form>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 DZ Trg. Vse pravice pridržane.</p>
+        <p><a href="#contact" style="color: #ffffff; text-decoration: underline;">Kontaktirajte nas</a></p>
     </footer>
 </body>
 </html>
+
