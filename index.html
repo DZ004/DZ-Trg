@@ -21,6 +21,44 @@
         header img {
             max-width: 150px; /* Adjust the logo size */
         }
+        nav {
+            background: #333;
+            color: #fff;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        nav ul li:hover > a {
+            background: #444;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #333;
+            padding: 10px;
+            z-index: 1000;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        .login-form {
+            margin-top: 20px;
+        }
+        .login-form input {
+            margin-right: 5px;
+        }
     </style>
     <script>
         function toggleLanguage(language) {
@@ -52,6 +90,16 @@
             <li><a href="#contact">Kontakt</a></li>
             <li><a href="#trg">Trg</a></li>
             <li><a href="#profile">Ustvari Profil</a></li>
+            <li>
+                <a href="#login">Prijava</a>
+                <div class="dropdown">
+                    <form class="login-form" action="login.html" method="post">
+                        <input type="text" placeholder="Uporabniško ime" required>
+                        <input type="password" placeholder="Geslo" required>
+                        <input type="submit" value="Prijava">
+                    </form>
+                </div>
+            </li>
         </ul>
     </nav>
     <main>
