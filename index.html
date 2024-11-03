@@ -1,335 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlashSale</title>
+    <title>Moja Spletna Stran - DZ Trg</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
     <style>
-        /* Basic Reset */
-        body, h1, h2, h3, p, ul, li, form {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
         }
-
+        header, nav, main, footer {
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+        }
         header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        header .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-left: 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ff9900;
-        }
-
-        main {
-            padding: 20px 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .category {
-            margin-bottom: 30px;
-        }
-
-        .category h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .product {
-            background: #fff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            flex: 1 1 calc(33.333% - 20px);
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .product img {
-            width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .product h3 {
-            margin: 10px 0;
-        }
-
-        .product p {
-            margin: 5px 0;
-        }
-
-        .product .price {
-            font-size: 1.2em;
-            color: #e94e77;
-            font-weight: bold;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        form label {
-            margin-bottom: 5px;
-        }
-
-        form input, form textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        form button {
-            background: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-
-        form button:hover {
-            background: #555;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            .product {
-                flex: 1 1 100%;
-            }
+        header img {
+            max-width: 150px; /* Adjust the logo size */
         }
     </style>
+    <script>
+        function toggleLanguage(language) {
+            const slContent = document.getElementById('sl-content');
+            const enContent = document.getElementById('en-content');
+            if (language === 'sl') {
+                slContent.style.display = 'block';
+                enContent.style.display = 'none';
+            } else {
+                slContent.style.display = 'none';
+                enContent.style.display = 'block';
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="toggleLanguage('sl')">
     <header>
-        <div class="container">
-            <h1>FlashSale</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <img src="logo.png" alt="DZ Trg Logo"> <!-- Update with the correct logo path -->
+        <h1>Dobrodošli na Mojo Spletno Stran - DZ Trg</h1>
+        <div>
+            <button onclick="toggleLanguage('sl')">Slovenščina</button>
+            <button onclick="toggleLanguage('en')">English</button>
         </div>
     </header>
-
+    <nav>
+        <ul>
+            <li><a href="#about">O Nas</a></li>
+            <li><a href="#services">Naše Storitve</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#trg">Trg</a></li>
+            <li><a href="#profile">Ustvari Profil</a></li>
+        </ul>
+    </nav>
     <main>
-        <section id="home">
-            <div class="container">
-                <h2>Welcome to FlashSale!</h2>
-                <p>Discover amazing deals and offers on your favorite products. Shop now and save big!</p>
+        <section id="about">
+            <h2>O Nas</h2>
+            <div id="sl-content">
+                <p>DZ Trg je podjetje, ki se osredotoča na zagotavljanje kakovostnih izdelkov in storitev za naše stranke. Naša vizija je biti vodilni na trgu s stalnim izboljševanjem in inovacijami.</p>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>DZ Trg is a company focused on providing high-quality products and services to our customers. Our vision is to be a market leader through continuous improvement and innovation.</p>
             </div>
         </section>
-
-        <section id="categories">
-            <div class="container">
-                <div class="category">
-                    <h2>Electronics</h2>
-                    <div class="products">
-                        <div class="product">
-                            <img src="electronics1.jpg" alt="Electronics 1">
-                            <h3>Smartphone</h3>
-                            <p>Latest model with all the features you need.</p>
-                            <p class="price">$299.00</p>
-                        </div>
-                        <div class="product">
-                            <img src="electronics2.jpg" alt="Electronics 2">
-                            <h3>Laptop</h3>
-                            <p>High-performance laptop for work and play.</p>
-                            <p class="price">$899.00</p>
-                        </div>
-                        <!-- Add more electronics products here -->
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2>Fashion</h2>
-                    <div class="products">
-                        <div class="product">
-                            <img src="fashion1.jpg" alt="Fashion 1">
-                            <h3>Summer Dress</h3>
-                            <p>Light and breezy summer dress.</p>
-                            <p class="price">$49.00</p>
-                        </div>
-                        <div class="product">
-                            <img src="fashion2.jpg" alt="Fashion 2">
-                            <h3>Leather Jacket</h3>
-                            <p>Stylish leather jacket for any occasion.</p>
-                            <p class="price">$199.00</p>
-                        </div>
-                        <!-- Add more fashion products here -->
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2>Home Appliances</h2>
-                    <div class="products">
-                        <div class="product">
-                            <img src="appliance1.jpg" alt="Appliance 1">
-                            <h3>Vacuum Cleaner</h3>
-                            <p>High-efficiency vacuum cleaner.</p>
-                            <p class="price">$129.00</p>
-                        </div>
-                        <div class="product">
-                            <img src="appliance2.jpg" alt="Appliance 2">
-                            <h3>Blender</h3>
-                            <p>Powerful blender for all your kitchen needs.</p>
-                            <p class="price">$79.00</p>
-                        </div>
-                        <!-- Add more home appliances here -->
-                    </div>
-                </div>
-
-                <div class="category">
-                    <h2>Sports Equipment</h2>
-                    <div class="products">
-                        <div class="product">
-                            <img src="sports1.jpg" alt="Sports 1">
-                            <h3>Running Shoes</h3>
-                            <p>Comfortable and durable running shoes.</p>
-                            <p class="price">$89.00</p>
-                        </div>
-                        <div class="product">
-                            <img src="sports2.jpg" alt="Sports 2">
-                            <h3>Yoga Mat</h3>
-                            <p>Non-slip yoga mat for your fitness routines.</p>
-                            <p class="price">$39.00</p>
-                        </div>
-                        <!-- Add more sports equipment here -->
-                    </div>
-                </div>
+        <section id="services">
+            <h2>Naše Storitve</h2>
+            <div id="sl-content">
+                <p>Naša podjetje ponuja široko paleto storitev, vključno z:</p>
+                <ul>
+                    <li>Kvalitetno prodajo izdelkov</li>
+                    <li>Individualno svetovanje</li>
+                    <li>Hitro dostavo</li>
+                </ul>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>Our company offers a wide range of services, including:</p>
+                <ul>
+                    <li>Quality product sales</li>
+                    <li>Personalized consulting</li>
+                    <li>Fast delivery</li>
+                </ul>
             </div>
         </section>
-
         <section id="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <form id="contactForm" action="#" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
-                <p id="formMessage" style="color: green; display: none;">Your message has been sent successfully!</p>
+            <h2>Kontakt</h2>
+            <div id="sl-content">
+                <p>Za vprašanja ali povpraševanja se obrnite na nas!</p>
+                <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>If you have any questions or inquiries, feel free to reach out!</p>
+                <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
+            </div>
+        </section>
+        <section id="trg">
+            <h2>Trg</h2>
+            <div id="sl-content">
+                <p>Informacije o trgovanju z našimi izdelki in storitvami. Naša ekipa je vedno na voljo za pomoč.</p>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>Information about trading our products and services. Our team is always available to help.</p>
+            </div>
+        </section>
+        <section id="profile">
+            <h2>Ustvari Profil</h2>
+            <div id="sl-content">
+                <p>Ustvarite svoj profil tukaj in dostopajte do ekskluzivnih vsebin in ponudb.</p>
+            </div>
+            <div id="en-content" style="display:none;">
+                <p>Create your profile here and access exclusive content and offers.</p>
             </div>
         </section>
     </main>
-
     <footer>
-        <div class="container">
-            <p>&copy; 2024 FlashSale. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 DZ Trg. Vse pravice pridržane.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Welcome to FlashSale!');
-
-            // Contact form handling
-            const form = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-
-            form.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent form submission
-
-                // Display a success message (simulate sending)
-                formMessage.style.display = 'block';
-
-                // Optionally, you could clear the form fields
-                form.reset();
-            });
-        });
-    </script>
 </body>
 </html>
