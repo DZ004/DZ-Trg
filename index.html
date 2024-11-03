@@ -47,16 +47,6 @@
         nav ul li a:hover {
             background: #003d80; /* Color on hover */
         }
-        .dropdown {
-            display: none;
-            position: absolute;
-            background: #004494;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        nav ul li:hover .dropdown {
-            display: block;
-        }
         .login-form {
             margin: 10px 0;
         }
@@ -96,6 +86,21 @@
         }
         .call-to-action:hover {
             background: #218838; /* Darker green on hover */
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .product img {
+            max-width: 100px; /* Set product image size */
+            margin-right: 20px;
+        }
+        .product-description {
+            flex-grow: 1;
         }
     </style>
     <script>
@@ -175,22 +180,48 @@
             <h2>Izdelki</h2>
             <div id="sl-content">
                 <p>Odkrijte naše najnovejše produkte in storitve:</p>
-                <ul>
-                    <li><strong>Izdelek 1:</strong> Opis izdelka 1.</li>
-                    <li><strong>Izdelek 2:</strong> Opis izdelka 2.</li>
-                    <li><strong>Izdelek 3:</strong> Opis izdelka 3.</li>
-                </ul>
+                <div class="product">
+                    <img src="images/product1.jpg" alt="Izdelek 1"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Izdelek 1:</strong> Opis izdelka 1.
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="images/product2.jpg" alt="Izdelek 2"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Izdelek 2:</strong> Opis izdelka 2.
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="images/product3.jpg" alt="Izdelek 3"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Izdelek 3:</strong> Opis izdelka 3.
+                    </div>
+                </div>
                 <div class="call-to-action">
                     <a href="#contact" style="color:white; text-decoration: none;">Kontaktirajte nas za več informacij!</a>
                 </div>
             </div>
             <div id="en-content" style="display:none;">
                 <p>Discover our latest products and services:</p>
-                <ul>
-                    <li><strong>Product 1:</strong> Description of product 1.</li>
-                    <li><strong>Product 2:</strong> Description of product 2.</li>
-                    <li><strong>Product 3:</strong> Description of product 3.</li>
-                </ul>
+                <div class="product">
+                    <img src="images/product1.jpg" alt="Product 1"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Product 1:</strong> Description of product 1.
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="images/product2.jpg" alt="Product 2"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Product 2:</strong> Description of product 2.
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="images/product3.jpg" alt="Product 3"> <!-- Update with your product image path -->
+                    <div class="product-description">
+                        <strong>Product 3:</strong> Description of product 3.
+                    </div>
+                </div>
                 <div class="call-to-action">
                     <a href="#contact" style="color:white; text-decoration: none;">Contact us for more information!</a>
                 </div>
@@ -199,38 +230,40 @@
         <section id="contact">
             <h2>Kontakt</h2>
             <div id="sl-content">
-                <p>Za vprašanja ali povpraševanja nas kontaktirajte!</p>
-                <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
+                <p>Za dodatne informacije nas kontaktirajte preko e-pošte ali telefona:</p>
+                <p>E-pošta: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
+                <p>Telefon: +386 70 688 427</p>
             </div>
             <div id="en-content" style="display:none;">
-                <p>If you have any questions or inquiries, feel free to reach out!</p>
+                <p>For further inquiries, please contact us via email or phone:</p>
                 <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
+                <p>Phone: +386 70 688 427</p>
             </div>
         </section>
         <section id="trg">
             <h2>Trg</h2>
             <div id="sl-content">
-                <p>Pridružite se našemu trgu za dostop do ekskluzivnih ponudb in storitev.</p>
+                <p>Naša trg ponuja široko izbiro storitev in izdelkov, ki ustrezajo vašim potrebam. Preverite naše ponudbe in izkoristite priložnosti!</p>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Join our market for                exclusive offers and services.</p>
+                <p>Our market offers a wide selection of services and products that meet your needs. Check out our offers and seize the opportunities!</p>
             </div>
         </section>
         <section id="profile">
             <h2>Ustvari Profil</h2>
             <div id="sl-content">
-                <p>Ustvarite svoj profil, da dostopate do prilagojenih storitev in promocij.</p>
-                <form action="create_profile.html" method="post">
-                    <input type="text" placeholder="Ime" required>
-                    <input type="email" placeholder="Email" required>
+                <p>Prijavite se za ustvarjanje profila in dostop do ekskluzivnih ponudb in novic.</p>
+                <form action="profile_creation.html" method="post">
+                    <input type="text" placeholder="Uporabniško ime" required>
+                    <input type="email" placeholder="E-pošta" required>
                     <input type="password" placeholder="Geslo" required>
                     <input type="submit" value="Ustvari Profil">
                 </form>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Create your profile to access personalized services and promotions.</p>
-                <form action="create_profile.html" method="post">
-                    <input type="text" placeholder="Name" required>
+                <p>Sign up to create a profile and gain access to exclusive offers and news.</p>
+                <form action="profile_creation.html" method="post">
+                    <input type="text" placeholder="Username" required>
                     <input type="email" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
                     <input type="submit" value="Create Profile">
@@ -240,8 +273,7 @@
     </main>
     <footer>
         <p>&copy; 2024 DZ Trg. Vse pravice pridržane.</p>
-        <p><a href="#contact" style="color: #ffffff; text-decoration: underline;">Kontaktirajte nas</a></p>
+        <p>Ustvarjeno z ljubeznijo in trudom.</p>
     </footer>
 </body>
 </html>
-
