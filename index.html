@@ -94,15 +94,16 @@
     <header>
         <h1>Dobrodošli v DZ Trg</h1>
         <nav>
-            <a href="index.html">Domov</a>
-            <a href="izdelki.html">Izdelki</a>
-            <a href="storitve.html">Naše Storitve</a>
-            <a href="kontakt.html">Kontakt</a 
+            <a href="#domov">Domov</a>
+            <a href="#izdelki">Izdelki</a>
+            <a href="#storitve">Naše Storitve</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#blog">Blog</a>
         </nav>
     </header>
 
     <div class="container">
-        <div class="content">
+        <div class="content" id="domov">
             <h2>Naša Ponujoča Storitve</h2>
             <p>DZ Trg je tu, da vam pomaga pri iskanju najboljše izbire izdelkov in storitev. Naša ekipa je predana zagotavljanju kakovosti in zadovoljstvu naših strank.</p>
 
@@ -124,14 +125,14 @@
             <h3>Naša Ekipa</h3>
             <p>Naša ekipa je sestavljena iz izkušenih strokovnjakov, ki se zavedajo potreb strank. Skupaj delamo na tem, da bi vam zagotovili najboljše možno izkušnjo.</p>
 
-            <div class="promotion">
+            <div class="promotion" id="novice">
                 <h3> DZ Novice </h3>
                 <p>Preverite DZ Novice!</p>
                 <a href="http://yourwebsite.com" style="color: white; text-decoration: underline;">Obiščite nas!</a>
             </div>
 
             <h2>Prijavite se na Naš Newsletter</h2>
-            <form action="subscribe.php" method="post">
+            <form id="newsletterForm" action="subscribe.php" method="post" onsubmit="return validateForm()">
                 <label for="email">Vnesite vaš e-naslov:</label>
                 <input type="email" id="email" name="email" required>
                 <input type="submit" value="Prijavi se">
@@ -157,7 +158,32 @@
 
     <footer>
         <p>Kontakt: info@dayzzzz@gmail.com | Telefon: +386 70 688 427</p>
-        <p>Copyright © 2024 DZ Trg. Vse pravice pridržane.</p>
+        <p>&copy; <span id="currentYear"></span> DZ Trg. Vse pravice pridržane.</p>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Validate newsletter subscription form
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Prosimo, vnesite veljaven e-naslov.");
+                return false;
+            }
+            return true;
+        }
+
+        // Display current year in footer
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
