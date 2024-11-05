@@ -102,6 +102,42 @@
         .product-description {
             flex-grow: 1;
         }
+        /* Custom styles for graphics */
+        .custom-graphic {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .custom-graphic img {
+            max-width: 100%; /* Ensure responsive graphic */
+            height: auto;
+        }
+    #dz-blogs-promotion {
+    background: #ffffff; /* Background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    text-align: center;
+}
+
+#dz-blogs-promotion h2 {
+    color: #0056b3; /* Title color */
+}
+
+.call-to-action {
+    background: #28a745; /* Call to action color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+.call-to-action:hover {
+    background: #218838; /* Darker green on hover */
+}
+
     </style>
     <script>
         function toggleLanguage(language) {
@@ -135,16 +171,7 @@
             <li><a href="kontakt">Kontakt</a></li>
             <li><a href="trg">Trg</a></li>
             <li><a href="profil">Ustvari Profil</a></li>
-            <li>
-                <a href="#login">Prijava</a>
-                <div class="dropdown">
-                    <form class="login-form" action="login.html" method="post">
-                        <input type="text" placeholder="Uporabniško ime" required>
-                        <input type="password" placeholder="Geslo" required>
-                        <input type="submit" value="Prijava">
-                    </form>
-                </div>
-            </li>
+            <li><a href="#login">Prijava</a></li>
         </ul>
     </nav>
     <main>
@@ -155,6 +182,9 @@
             </div>
             <div id="en-content" style="display:none;">
                 <p>DZ Trg is a leading company in promoting high-quality services and products from other businesses. Our mission is to connect consumers with providers offering top-notch solutions.</p>
+            </div>
+            <div class="custom-graphic">
+                <img src="images/custom-graphic.jpg" alt="Custom Graphic"> <!-- Update with your custom graphic path -->
             </div>
         </section>
         <section id="services">
@@ -230,50 +260,34 @@
         <section id="contact">
             <h2>Kontakt</h2>
             <div id="sl-content">
-                <p>Za dodatne informacije nas kontaktirajte preko e-pošte ali telefona:</p>
-                <p>E-pošta: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
-                <p>Telefon: +386 70 688 427</p>
-            </div>
-            <div id="en-content" style="display:none;">
-                <p>For further inquiries, please contact us via email or phone:</p>
-                <p>Email: <a href="mailto:info.dayzzzz@gmail.com">info.dayzzzz@gmail.com</a></p>
-                <p>Phone: +386 70 688 427</p>
-            </div>
-        </section>
-        <section id="trg">
-            <h2>Trg</h2>
-            <div id="sl-content">
-                <p>Naša trg ponuja široko izbiro storitev in izdelkov, ki ustrezajo vašim potrebam. Preverite naše ponudbe in izkoristite priložnosti!</p>
-            </div>
-            <div id="en-content" style="display:none;">
-                <p>Our market offers a wide selection of services and products that meet your needs. Check out our offers and seize the opportunities!</p>
-            </div>
-        </section>
-        <section id="profile">
-            <h2>Ustvari Profil</h2>
-            <div id="sl-content">
-                <p>Prijavite se za ustvarjanje profila in dostop do ekskluzivnih ponudb in novic.</p>
-                <form action="profile_creation.html" method="post">
+                <p>Za informacije nas kontaktirajte na:</p>
+                <p>Email: <a href="mailto:info@dayzzzz@gmail.com">info@dayzzzz@gmail.com</a></p>
+                <form class="login-form">
                     <input type="text" placeholder="Uporabniško ime" required>
-                    <input type="email" placeholder="E-pošta" required>
                     <input type="password" placeholder="Geslo" required>
-                    <input type="submit" value="Ustvari Profil">
+                    <button type="submit">Prijava</button>
                 </form>
             </div>
             <div id="en-content" style="display:none;">
-                <p>Sign up to create a profile and gain access to exclusive offers and news.</p>
-                <form action="profile_creation.html" method="post">
+                <p>For inquiries, contact us at:</p>
+                <p>Email: <a href="mailto:info@dayzzzz@gmail.com">info@dayzzzz@gmail.com</a></p>
+                <form class="login-form">
                     <input type="text" placeholder="Username" required>
-                    <input type="email" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
-                    <input type="submit" value="Create Profile">
+                    <button type="submit">Login</button>
                 </form>
             </div>
         </section>
+        <section id="dz-blogs-promotion">
+    <h2>Novice iz Slovenije</h2>
+    <p>Odkrijte najnovejše novice in zanimivosti iz Slovenije na <strong>DZ Blogs</strong>. Naša ekipa vam prinaša kakovostne vsebine, ki pokrivajo različne teme, od kulture in turizma do ekonomskih novic. Ne zamudite priložnosti, da ostanete obveščeni o vsem, kar se dogaja v naši čudoviti deželi!</p>
+    <div class="call-to-action">
+        <a href="https://dz004.github.io/DZ-Blogs/" style="color:white; text-decoration: none;">Obiščite DZ Blogs za več informacij!</a>
+    </div>
+</section>
     </main>
     <footer>
         <p>&copy; 2024 DZ Trg. Vse pravice pridržane.</p>
-        <p>Ustvarjeno z ljubeznijo in trudom.</p>
     </footer>
 </body>
 </html>
